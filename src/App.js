@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Main from './components/main/Main';
+import {Row,Col, Container} from 'reactstrap'
+import {Routes,Route} from 'react-router-dom'
+import SearchedCity from './components/searchedCity/SearchedCity';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+      <Routes>
+          <Route path='/' exact element={<Main/>}/>
+          <Route path='/city/:search' element={<SearchedCity/>}/>
+          
+        </Routes>
+      </Container>
     </div>
   );
 }
